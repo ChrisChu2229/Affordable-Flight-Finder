@@ -1,11 +1,6 @@
-# This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
-import requests as requests
-import os
-from twilio.rest import Client
 from pprint import pprint
 from flight_search import FlightSearch
 from data_manager import DataManager
-from flight_data import FlightData
 from datetime import datetime, timedelta
 from notification_manager import NotificationManager
 
@@ -13,14 +8,11 @@ ORIGIN_CITY_IATA = "SFO"
 
 FlightSearch = FlightSearch()
 DataManager = DataManager()
-# FlightData = FlightData()
 NotificationManager = NotificationManager()
 
 
 sheet_data = DataManager.get_destination_data()
 
-# # This code is for retrieving the IATA code if there is none there, the Google sheets data is now populated so this
-# code is unnecessary ## pprint(sheet_data) ##
 
 if sheet_data[0]["iataCode"] == "":
     print("filling in empty iataCode")
@@ -33,10 +25,6 @@ if sheet_data[0]["iataCode"] == "":
     DataManager.destination_data = sheet_data
     DataManager.update_destination_codes()
 
-# my attempt at finding the cheapest flight but all the work was being done in flight; I did all the logic inside
-# the search the cheapest flight function but now the logic has been split up ##
-# for cityItem in sheet_data:
-#     cityItem["lowestPrice"] = FlightData.searchCheapestFlight("San Francisco", 1000, cityItem["iataCode"])
 
 tomorrow = datetime.now() + timedelta(days=1)
 six_months_from_today = datetime.now() + timedelta(days=(180))
