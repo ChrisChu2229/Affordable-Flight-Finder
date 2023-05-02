@@ -26,7 +26,7 @@ The project is composed of several Python files, each with its purpose:
 3. Set up your own Twilio account [here](https://www.twilio.com/try-twilio) and get your Account SID and Auth Token.
 4. Create your own Google Sheets with flight data, following the format of the example sheet provided in the project repository.
 - should look like this:
-![image](https://user-images.githubusercontent.com/92602228/235743025-ff81828c-ba4e-412f-8046-4b6e16871d6e.png)
+- ![image](https://user-images.githubusercontent.com/92602228/235743025-ff81828c-ba4e-412f-8046-4b6e16871d6e.png)
 5. Install the required dependencies:
 - pip install requests
 - pip install twilio
