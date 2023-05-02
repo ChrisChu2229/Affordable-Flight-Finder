@@ -25,8 +25,8 @@ The project is composed of several Python files, each with its purpose:
 2. Set up your own Tequila API account [here](https://tequila.kiwi.com/portal/login) and get your API key.
 3. Set up your own Twilio account [here](https://www.twilio.com/try-twilio) and get your Account SID and Auth Token.
 4. Install the required dependencies:
-pip install requests
-pip install twilio
+- pip install requests
+- pip install twilio
 5. Set up the following environment variables:
 - `TEQUILAAPIKEY`: Your Tequila API key.
 - `TWILIOACCOUNTSID`: Your Twilio Account SID.
