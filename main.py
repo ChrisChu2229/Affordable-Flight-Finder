@@ -53,15 +53,6 @@ for destination in sheet_data:
         for user in user_emails:
             NotificationManager.sendEmail(user["email"], flight.price, "San Francisco", ORIGIN_CITY_IATA, flight.destination_city,
                                      flight.destination_airport, flight.out_date, flight.return_date, max_stopovers_count, flight.via_city_to, flight.via_city_from)
-    # elif flight and flight.price < destination["lowestPrice"]:
-    #     NotificationManager.sendText(flight.price, "San Francisco", ORIGIN_CITY_IATA, flight.destination_city,
-    #                                  flight.destination_airport, flight.out_date, flight.return_date,
-    #                                  max_stopovers_count, flight.via_city_to, flight.via_city_from)
-    #     for user in user_emails:
-    #         NotificationManager.sendEmail(user["email"], flight.price, "San Francisco", ORIGIN_CITY_IATA,
-    #                                       flight.destination_city,
-    #                                       flight.destination_airport, flight.out_date, flight.return_date,
-    #                                       max_stopovers_count, flight.via_city_to, flight.via_city_from)
 
 
 
