@@ -5,6 +5,8 @@ from twilio.rest import Client
 ACCOUNT_SID = os.environ["TWILIOACCOUNTSID"]
 AUTH_TOKEN = os.environ["TWILIOAUTHTOKEN"]
 GMAIL_PASSWORD = os.environ["GMAILPASSWORD"]
+MYPHONENUMBER = os.environ["MYPHONENUMBER"]
+MYEMAIL = os.environ["MYEMAIL"]
 
 
 class NotificationManager:
@@ -23,14 +25,14 @@ class NotificationManager:
         message = self.client.messages.create(
             body=textMessage,
             from_="+18444361546",
-            to="+14087817022"
+            to=MYPHONENUMBER
         )
 
         print(message.sid)
 
     def sendEmail(self, reciever, price, departure_city_name, departure_iata_code, arrival_city, arrival_iata_code, outbound_date,
                  inbound_date, stop_overs, via_city_to, via_city_from):
-        sender = "chrispd2229@gmail.com"
+        sender = MYEMAIL
         subject = "Low airline ticket price found!"
 
         smtp_server = "smtp.gmail.com"
@@ -45,7 +47,7 @@ class NotificationManager:
 
             server.starttls()
 
-            username = "chrispd2229@gmail.com"
+            username = MYEMAIL
             password = GMAIL_PASSWORD
             server.login(username, password)
 
